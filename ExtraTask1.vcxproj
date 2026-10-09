@@ -119,11 +119,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="extra-task-1.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ExtraTask1\extra-task-1.cpp" />
+    <ClCompile Include="ExtraTask1\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="extra-task-1.h" />
+    <ClInclude Include="ExtraTask1\extra-task-1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
