@@ -137,6 +137,31 @@ double to_24_hour_clock(double hours)
     it is currently 01:03:20 (hh:mm:ss).
 */
 
+// Determine the hours part of a time in seconds.
+int get_hours(int seconds)
+{
+    assert(seconds >= 0);
+
+    return seconds / 3600;
+}
+
+// Determine the minutes part of a time in seconds.
+int get_minutes(int seconds)
+{
+    assert(seconds >= 0);
+
+    return seconds % 3600 / 60;
+}
+
+// Determine the seconds part of a time in seconds.
+int get_seconds(int seconds)
+{
+    assert(seconds >= 0);
+
+    return seconds % 3600 % 60;
+}
+
+
 double time_to_utc(int utc_offset, double time)
 {
     return 0;
