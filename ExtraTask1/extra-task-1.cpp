@@ -161,10 +161,13 @@ int get_seconds(int seconds)
     return seconds % 3600 % 60;
 }
 
-
+// Return time at UTC+0, where utc_offset is the number of hours away from UTC + 0.
 double time_to_utc(int utc_offset, double time)
 {
-    return 0;
+    assert(time >= 0 && time < 24);
+    assert(utc_offset >= -12 && utc_offset <= 14);
+
+    return fmod(time - utc_offset + 24, 24);
 
     /*
         Return time at UTC+0, where utc_offset is the number of hours away from
@@ -192,9 +195,13 @@ double time_to_utc(int utc_offset, double time)
     */
 }
 
+// Return UTC time in time zone utc_offset.
 double time_from_utc(int utc_offset, double time)
 {
-    return 0;
+    assert(time >= 0 && time < 24);
+    assert(utc_offset >= -12 && utc_offset <= 14);
+
+    return fmod(time + utc_offset + 24, 24);
 
     /*
         Return UTC time in time zone utc_offset.
